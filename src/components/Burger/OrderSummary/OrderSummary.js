@@ -1,7 +1,8 @@
 import React from "react";
-import Aux from "../../../hoc/Auxilary";
+import Aux from "../../../hoc/Aux/Auxilary";
 import Button from "../../UI/Button/Button";
 import ListItemText from "@material-ui/core/ListItemText";
+
 
 const orderSummary = (props) => {
   const ingredientsSummary = Object.keys(props.ingredients).map((igKey) => {
