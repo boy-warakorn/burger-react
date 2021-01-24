@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-import axios from "../../axios-orders";
-import Aux from "../../hoc/Auxilary/Auxilary";
-import Burger from "../../components/Burger/Burger";
-import BuildControls from "../../components/Burger/BuildControls/BuildControls";
-import Modal from "../../components/UI/Modal/Modal";
-import Spinner from "../../components/UI/Spinner/Spinner";
-import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
-import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
-import * as actions from "../../store/actions/index";
+import axios from '../../axios-orders';
+import Aux from '../../hoc/Auxilary/Auxilary';
+import Burger from '../../components/Burger/Burger';
+import BuildControls from '../../components/Burger/BuildControls/BuildControls';
+import Modal from '../../components/UI/Modal/Modal';
+import Spinner from '../../components/UI/Spinner/Spinner';
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
+import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
+import * as actions from '../../store/actions/index';
 
-const BurgerBuilder = (props) => {
+export const BurgerBuilder = (props) => {
   const [purchasing, setPurchasing] = useState(false);
 
   const ings = useSelector((state) => {
@@ -60,8 +60,8 @@ const BurgerBuilder = (props) => {
     if (isAuthenticated) {
       setPurchasing(true);
     } else {
-      onSetAuthRedirectPath("/checkout");
-      props.history.push("/auth");
+      onSetAuthRedirectPath('/checkout');
+      props.history.push('/auth');
     }
   };
   const purchaseCancelHandler = () => {
@@ -71,7 +71,7 @@ const BurgerBuilder = (props) => {
   const purchaseContinueHandler = () => {
     onInitPurchase();
     props.history.push({
-      pathname: "/checkout",
+      pathname: '/checkout',
     });
   };
 
